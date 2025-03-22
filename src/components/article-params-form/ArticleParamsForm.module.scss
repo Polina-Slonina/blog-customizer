@@ -3,9 +3,22 @@
 	left: 0;
 	width: 616px;
 	height: 100%;
-	overflow: scroll;
+	overflow-y: auto; /* Используем вертикальную прокрутку */
+	background-color: #ffffff; /* Добавляем белый фон для сайдбара */
 	transform: translate(-616px);
 	transition: transform 0.5s ease;
+}
+
+/* Добавим границу справа от сайдбара */
+
+.container::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 1px;
+	background-color: #000000;
 }
 
 .container_open {
@@ -18,12 +31,12 @@
 	flex-direction: column;
 	row-gap: 50px;
 	box-sizing: border-box;
-	width: 616px;
+	width: 100%; /* Ширина должна соответствовать ширине контейнера */
 	height: auto;
 	min-height: 100%;
 	padding: 50px 31px;
-	background-color: #ffffff;
-	border-right: 1px solid #000000;
+	background-color: transparent; /* Форма должна быть прозрачной внутри сайдбара */
+	border-right: none; /* Убираем границу у формы */
 }
 
 .bottomContainer {
